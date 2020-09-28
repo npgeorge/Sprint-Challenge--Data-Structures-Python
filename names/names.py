@@ -22,6 +22,31 @@ end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
 
+# making new list with all names
+names_3 = names_1 + names_2
+# setting up a blank dict
+names_dict = {}
+# setting up a duplicates list
+dup_list = []
+
+# use a for loop with if/else statement
+# simplifying the problem to a binary choice
+for i in names_3:
+    if i in names_dict:
+        # if name appears more than once, count up &
+        names_dict[i] += 1
+        # append it to the duplicates list
+        dup_list.append(i)
+    else:
+        # set name to 1
+        names_dict[i] = 1
+
+
+end_time = time.time()
+print (f"{len(dup_list)} duplicates:\n\n{', '.join(dup_list)}\n\n")
+# 0.0086 seconds
+print (f"runtime: {end_time - start_time} seconds")
+
 # ---------- Stretch Goal -----------
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
